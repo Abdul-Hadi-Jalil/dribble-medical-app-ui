@@ -1,3 +1,4 @@
+import 'package:dribble_medical_app_ui/widgets/category_card.dart';
 import 'package:flutter/material.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -115,7 +116,7 @@ class _HomeScreenState extends State<HomeScreen> {
             // search bar
             Container(
               margin: EdgeInsets.symmetric(horizontal: 20),
-              padding: EdgeInsets.symmetric(vertical: 8),
+              padding: EdgeInsets.symmetric(vertical: 10),
               decoration: BoxDecoration(
                 color: Colors.deepPurple.shade100,
                 borderRadius: BorderRadius.circular(20),
@@ -129,7 +130,38 @@ class _HomeScreenState extends State<HomeScreen> {
               ),
             ),
 
+            SizedBox(height: 25),
+
             // horizontal listview
+            SizedBox(
+              height: 80,
+              child: ListView(
+                scrollDirection: Axis.horizontal,
+                children: [
+                  CategoryCard(
+                    text: 'Dentist',
+                    iconImagePath: Image.asset(
+                      'assets/icons/tooth.png',
+                      height: 35,
+                    ),
+                  ),
+                  CategoryCard(
+                    text: 'Surgeon',
+                    iconImagePath: Image.asset(
+                      'assets/icons/surgeon.png',
+                      height: 35,
+                    ),
+                  ),
+                  CategoryCard(
+                    text: 'Pharmacist',
+                    iconImagePath: Image.asset(
+                      'assets/icons/pharmacist.png',
+                      height: 35,
+                    ),
+                  ),
+                ],
+              ),
+            ),
 
             // doctor list
           ],
