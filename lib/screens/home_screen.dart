@@ -1,4 +1,5 @@
 import 'package:dribble_medical_app_ui/widgets/category_card.dart';
+import 'package:dribble_medical_app_ui/widgets/doctor_card.dart';
 import 'package:flutter/material.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -67,7 +68,9 @@ class _HomeScreenState extends State<HomeScreen> {
                 spacing: 40,
                 children: [
                   // picture
-                  Container(width: 100, height: 100, color: Colors.purple),
+                  Image.asset(
+                    'assets/images/Screenshot_2025-12-09_222644-removebg-preview.png',
+                  ),
 
                   // how do you feel
                   Expanded(
@@ -163,7 +166,61 @@ class _HomeScreenState extends State<HomeScreen> {
               ),
             ),
 
+            SizedBox(height: 25),
+
             // doctor list
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 20.0),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Text(
+                    'Doctors List',
+                    style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+                  ),
+                  Text(
+                    'See all',
+                    style: TextStyle(
+                      fontSize: 16,
+                      fontWeight: FontWeight.bold,
+                      color: Colors.grey.shade500,
+                    ),
+                  ),
+                ],
+              ),
+            ),
+
+            SizedBox(height: 20),
+
+            // doctor
+            Expanded(
+              child: ListView(
+                scrollDirection: Axis.horizontal,
+                children: [
+                  DoctorCard(
+                    name: "Dr. Mustafa ",
+                    imagePath:
+                        "assets/images/muhammad-hicham--3HE32KRqJs-unsplash.jpg",
+                    rating: "4.9",
+                    title: "Thepariest",
+                  ),
+                  DoctorCard(
+                    name: "Dr. Ali Ahmad",
+                    imagePath:
+                        "assets/images/usman-yousaf-pTrhfmj2jDA-unsplash.jpg",
+                    rating: "5",
+                    title: "Psychologist",
+                  ),
+                  DoctorCard(
+                    name: "Dr. Hammad ",
+                    imagePath:
+                        "assets/images/vaibhav-vivian-3HIroMoyre8-unsplash.jpg",
+                    rating: "4.8",
+                    title: "Surgeon",
+                  ),
+                ],
+              ),
+            ),
           ],
         ),
       ),
